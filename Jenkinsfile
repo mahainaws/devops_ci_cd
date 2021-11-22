@@ -105,7 +105,7 @@ pipeline {
 		success {
 			script {
 			if (env.BRANCH_NAME == 'master'){
-				withCredentials([usernamePassword(credentialsId: '434b0b23-9deb-4ee6-85d4-43c4c23513bb', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+				withCredentials([usernamePassword(credentialsId: 'mahainaws', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
 				sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/mahainaws/devops_ci_cd.git HEAD:master')
 					}
 				} else if (env.BRANCH_NAME == 'dev'){
